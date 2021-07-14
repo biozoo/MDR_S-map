@@ -1,4 +1,4 @@
-############################################################################################
+##################################################################################################
 # Tips for applying MDR S-map to reconstruct large interaction networks in large dynamical systems
 1. Detailed algorithm of MDR S-map and all necessary functions were in the R file recorded in 'Demo_MDR_function.R'
 2. To reproduce the main results based on multi-species Ricker model (Fig. 2), all necessary codes and docs were in the file, 'MainResults_RickerModels'
@@ -13,7 +13,7 @@
 
 
 
-###############################################################################
+########################################################################################
 #### Tips for applying MDR S-map in more complicated models ############################
 # The steps 1-10 mention aboved can also be applied to reconstruct interaciton Jacobians in more complicated models, including 
 # (ii) discrete LV competition model (data name=LV), (iii) Ricker-Berverton-Holt model (data name=RBH), (iv) Host-parasitoid model (data name=HP)
