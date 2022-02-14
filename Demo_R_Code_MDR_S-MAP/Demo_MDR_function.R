@@ -359,15 +359,13 @@ secv.demo <- function(cv.ind,nonze=T){
     cv.ind.i <- filter(cv.ind,variable==i,nonzero>nonzer)
     # Find the minimal MSE
     mind <- which.min(cv.ind.i[,'mse'])[1]
-    min.mse <- cv.ind.i[mind,'mse']
-    cv.seet <- filter(cv.ind.i,mse==min.mse)
+    cv.seet <- cv.ind.i[mind,]
+    min.mse <- cv.seet[,'mse']
     cv.see <- rbind(cv.see,cv.seet)
   } # end of node i
   rownames(cv.see) <- NULL
   return(cv.see)
 }
-
-
 
 
 MDRsmap.demo <- function(paracv,ds,ds_tp1,ds.test=NULL,dst_tp1=NULL,
