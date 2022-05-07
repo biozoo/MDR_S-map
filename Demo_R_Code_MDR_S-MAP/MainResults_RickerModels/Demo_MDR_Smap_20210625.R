@@ -30,7 +30,7 @@ SaveFile <- T #T/F for saving files
 # Read dataset
 da.range <- 101:200 # Subsample for data analysis
 out.sample <- T # T/F for out-of-sample forecast
-nout <- 2  # number of out-of-sample
+if(out.sample){nout <- 2}else{nout <- 0}  # number of out-of-sample
 
 (da.name <- 'model1024_0_0_0')
 do <- read.csv('result20191024_0_0_0_.csv',header=T,stringsAsFactors = F)
@@ -57,12 +57,12 @@ ds <- (d-repmat(do.mean,nrow(d),1))*repmat(do.sd,nrow(d),1)^-1 # Normalized in-s
 ds_tp1 <- (d_tp1-repmat(do.mean,nrow(d_tp1),1))*repmat(do.sd,nrow(d_tp1),1)^-1 # Normalized in-sample dataset at time t+1
 
 # Out-sample
-if(out.sample&nout!=0){
+if(out.sample|nout!=0){
   d.test <- do[nin:(ndo-1),]                 # Out-of-sample dataset at time t 
   dt_tp1 <- do[(nin+1):ndo,]                 # Out-of-sample dataset at time t+1
   ds.test <- (d.test-repmat(do.mean,nrow(d.test),1))*repmat(do.sd,nrow(d.test),1)^-1 # Normalized out-of-sample dataset at time t
   dst_tp1 <- (dt_tp1-repmat(do.mean,nrow(dt_tp1),1))*repmat(do.sd,nrow(dt_tp1),1)^-1 # Normalized out-of-sample dataset at time t+1
-}else{d.test <- dt_tp1 <- ds.test <- NULL}
+}else{d.test <- dt_tp1 <- dst_tp1 <- ds.test <- NULL}
 
 # Compiled data at time t 
 ds.all <- rbind(ds,ds.test)
