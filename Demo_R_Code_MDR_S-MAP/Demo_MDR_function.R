@@ -380,6 +380,7 @@ MDRsmap.demo <- function(paracv,ds,ds_tp1,ds.test=NULL,dst_tp1=NULL,
   # dimensions of dataset
   nrds <- nrow(ds)
   ncds <- ncol(ds)
+  if(is.null(colnames(ds))){colnames(ds)=paste('Node',1:ncol(ds),sep='_')}
   # Estimated jacobian in in-sample & out-of-sample
   jcof <- jcof.test <- NULL
   enet.in <- enet.out <- NULL
