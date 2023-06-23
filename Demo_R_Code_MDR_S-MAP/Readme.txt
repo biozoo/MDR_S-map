@@ -22,7 +22,7 @@
 # R codes for analyzing time series by MDR S-map were included in the file 'MDR_S-MAP' 
 # Finally, we compared the reconstructed interaction Jacobians with their theoretical expectations by executing the R script deposited in the file 'InferenceSkills' based on the results of MDR S-map deposited in the file 'Output'
 
-
+The EDM analysis in all R files are based on rEDM package (ver 1.2.3) that can be downloaded via the following link: https://github.com/cran/rEDM/releases/tag/1.2.3 We noticed the inconsistency of some input-output arguments between this 1.2.3 version versus newer versions of rEDM. Please use the 1.2.3 version for reproducibility.
 
 
    
