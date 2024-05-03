@@ -58,7 +58,7 @@ ccm.fast.demo <- function(ds,Epair=T,cri='rmse',Emax=10){
   np <- nrow(ds) # time series length
   ns <- ncol(ds) # number of nodes
   lib.s <- c(seq(10,nrow(ds),10),nrow(ds)) # sequence of library size 
-  crirho <- qt(0.95,np-1)/(np-2+qt(0.95,np-1)^2) # critical values with alpha=0.05
+  crirho <- qt(0.95,np-2)/sqrt(np-2+qt(0.95,np-2)^2) # critical values with alpha=0.05
   ccm.rho <- ccm.sig <- matrix(0,ns,ns)
   for(i in 1:ns){
     t.begin <- proc.time()
