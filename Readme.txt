@@ -1,5 +1,8 @@
-###################################################################################################################
-### Steps for applying MDR S-map to reconstruct large interaction networks with chaotic dynamics  #################
+This repository contains the R implementation of MDR S-map. 
+For Python users, an equivalent implementation is available at:
+https://github.com/feidi2002/empirical-dynamic-modeling-pyEDM-
+
+################################################################################################################## Steps for applying MDR S-map to reconstruct large interaction networks with chaotic dynamics  #################
 1. Detailed algorithm of MDR S-map and all necessary functions were in the R file recorded in 'Demo_MDR_function.R'
 2. To reproduce the main results based on multi-species Ricker model (Fig. 2), all necessary codes and documents were provided in the file, 'MainResults_RickerModels'
 3. We parameterized and generated time sereis data by the R files, 'RickerParameter.R', 'TS_RickerModel.R', respectively (in the file 'TimeSeriesGeneration').
